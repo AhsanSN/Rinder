@@ -169,7 +169,7 @@
 	h1, h2, h3, h4, h5, h6 {
 		font-weight: 700;
 		line-height: 1.5;
-		margin: 0 0 1em 0;
+		margin: 0 0 0.5em 0;
 	}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -1208,6 +1208,7 @@
 		padding: 3.5em 0 1.5em 0;
 		padding-left: 3.5em;
 		padding-right: 3.5em;
+		padding-bottom: 22px;
 	}
 
 		@media screen and (max-width: 980px) {
@@ -1216,6 +1217,7 @@
 				padding: 2em 0 0.1em 0;
 				padding-right: 2em;
 				padding-left: 2em;
+				padding-bottom: 22px;
 			}
 
 		}
@@ -1226,6 +1228,7 @@
 				padding: 1em 0 0.1em 0;
 				padding-right: 1em;
 				padding-left: 1em;
+				padding-bottom: 22px;
 			}
 
 		}
