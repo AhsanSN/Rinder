@@ -1,3 +1,34 @@
+<?
+include_once("global.php");
+
+if (isset($_POST["email"])) {
+    $email    = $_POST["email"];
+    $password = $_POST["password"];
+    if ((!$email) || (!$password)) {
+        $message = "Please insert both fields.";
+    } else {
+        $query  = "SELECT * FROM Users WHERE email = '$email' AND password='$password' ";
+        $result = $con->query($query);
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $username    = $row['username'];
+                $usernumber  = $row['id'];
+                $email       = $row['email'];
+                $category         = $row['category'];
+            }
+            $_SESSION['username']    = $username;
+            $_SESSION['email']       = $email;
+            $_SESSION['category']         = $category;
+?>
+           <script type="text/javascript">
+                window.location = "/";
+            </script>
+            <?
+        } else {
+        }
+    }
+}
+?>
 <!DOCTYPE HTML>
 <!--
 	Created by: Syed Ahsan Ahmed
@@ -14,12 +45,7 @@
 		<div class="page-wrap">
 
 			<!-- Nav -->
-				<nav id="nav">
-					<ul>
-						<li><a href="index.html" class="active"><span class="icon fa-home"></span></a></li>
-                        <li><a href="about.html"><span class="icon fa-info"></span></a></li>
-					</ul>
-				</nav>
+				<?php include("phpParts/navBar.php")?>
 
 			<!-- Main -->
 				<section id="main">
@@ -34,7 +60,7 @@
 
 							<!-- Photo Galleries -->
 								<div class="gallery">
-									<form action="signup.php" method="post">
+									<form action="login.php" method="post">
 										<div class="field half">
 											<label for="email">Email</label>
 											<input name="email" id="email" type="email" placeholder="Email">
@@ -47,13 +73,14 @@
 											<li><input value="Login!" class="button" type="submit"></li>
 										</ul>
 									</form>
-									<p>Don't have an account? <a href="signup.html">Signup now!</a></p>
+									<p>Don't have an account? <a href="signup.php">Signup now!</a></p>
 								</div>
 						</section>
 						
 						<br><br><br><br><br><br>
 						
 					<!-- Footer -->
+					<?php include("phpParts/footer.php")?>
 						
 				</section>
 		</div>
