@@ -1,3 +1,4 @@
+<?php include_once("global.php")?>
 <!DOCTYPE HTML>
 <!--
 	Created by: Syed Ahsan Ahmed
@@ -14,13 +15,7 @@
 		<div class="page-wrap">
 
 			<!-- Nav -->
-				<nav id="nav">
-					<ul>
-						<li><a href="index.html" class="active"><span class="icon fa-home"></span></a></li>
-						<li><a href="newsFeed.html"><span class="icon fa-rss"></span></a></li>
-						<li><a href="myPosts.html"><span class="icon fa-user"></span></a></li>
-					</ul>
-				</nav>
+			<?php include_once("phpParts/navBar.php")?>
 
 			<!-- Main -->
 				<section id="main">
@@ -31,8 +26,8 @@
 								<h1>Rinder</h1>
 								<p>A place where you get internships.</p>
 								<ul class="actions">
-									<li><a href="login.html" class="button alt scrolly big">Login</a></li>
-									<li><a href="signup.html" class="button alt scrolly big">Signup</a></li>
+									<li><a href="login.php" class="button alt scrolly big">Login</a></li>
+									<li><a href="signup.php" class="button alt scrolly big">Signup</a></li>
 								</ul>
 							</div>
 						</section>
@@ -51,11 +46,7 @@
 						</section>
 
 					<!-- Footer -->
-						<footer id="footer">
-							<div class="copyright">
-								&copy; Untitled Design: <a href="https://templated.co/">TEMPLATED</a>. Images: <a href="https://unsplash.com/">Unsplash</a>.
-							</div>
-						</footer>
+						<?php include("phpParts/footer.php")?>
 				</section>
 		</div>
 

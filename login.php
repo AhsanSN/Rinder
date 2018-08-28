@@ -54,11 +54,7 @@
 						<br><br><br><br><br><br>
 						
 					<!-- Footer -->
-						<footer id="footer">
-							<div class="copyright">
-								&copy; Designed by Ahsan Ahmed.
-							</div>
-						</footer>
+						
 				</section>
 		</div>
 
