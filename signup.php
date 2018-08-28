@@ -1,3 +1,47 @@
+<?include_once ("global.php");
+
+//checking previous
+if (isset($_POST['username'])) {
+
+    $allow        = 1;
+    $new_username = $_POST['username'];
+    $new_email    = $_POST["email"];
+    $new_password = $_POST["password"];
+    $new_category = $_POST["radio"];
+
+    $email_query = "SELECT email FROM Users Where email='$new_email'";
+    $result      = $con->query($email_query);
+    if ($result->num_rows > 0) {
+        $allow = 0;
+        //already user
+    }
+    
+    if ($allow == 1) {
+
+            $new_usernumber = $_POST['usernumber'];
+            $new_pic = $_POST['pic'];
+            $sql            = "INSERT INTO Users(username, email, password, category) VALUES ('$new_username', '$new_email','$new_password','$new_category')";
+            if (!mysqli_query($con, $sql)) {
+                echo "account notcreated";
+            } else {
+                $_SESSION['usernumber'] = $new_usernumber;
+                $_SESSION['username']   = $new_username;
+                $_SESSION['email']      = $new_email;
+                $_SESSION['category']      = $new_category;
+                $_SESSION['pic']        = $_POST['pic'];
+                
+                $session_usernumber = $_SESSION['usernumber'];
+                $session_username   = $_SESSION['username'];
+                $session_pic        = $_SESSION['pic'];
+                $session_email      = $_SESSION['email'];
+                $session_category      = $_SESSION['category'];
+                
+                ?><script> window.location = "signup.php"; </script><?
+            }
+
+    }
+}
+?>
 <!DOCTYPE HTML>
 <!--
 	Created by: Syed Ahsan Ahmed
@@ -81,12 +125,7 @@
 		<div class="page-wrap">
 
 			<!-- Nav -->
-				<nav id="nav">
-					<ul>
-						<li><a href="index.html" class="active"><span class="icon fa-home"></span></a></li>
-                        <li><a href="about.html"><span class="icon fa-info"></span></a></li>
-					</ul>
-				</nav>
+				<?php include("phpParts/navBar.php")?>
 
 			<!-- Main -->
 				<section id="main">
@@ -103,8 +142,8 @@
 								<div class="gallery">
 									<form action="signup.php" method="post">
 										<div class="field half first">
-											<label for="name">Name</label>
-											<input name="name" id="name" type="text" placeholder="Name">
+											<label for="username">Username</label>
+											<input name="username" id="username" type="text" placeholder="Username">
 										</div>
 										<div class="field half">
 											<label for="email">Email</label>
@@ -116,11 +155,11 @@
 										</div>
 
 										<label class="container">Student
-												<input type="radio" checked="checked" name="radio">
+												<input type="radio" checked name="radio" value="student">
 												<span class="checkmark"></span>
 											  </label>
 											  <label class="container">Professor
-												<input type="radio" name="radio">
+												<input type="radio" name="radio" value="professor">
 												<span class="checkmark"></span>
 											  </label>
 
@@ -129,17 +168,13 @@
 											<li><input value="Signup!" class="button" type="submit"></li>
 										</ul>
                                     </form>
-                                    <p>Already have an account? <a href="login.html">Login now!</a></p>
+                                    <p>Already have an account? <a href="login.php">Login now!</a></p>
 								</div>
                         </section>
                         <br><br><br><br><br>
                         
 					<!-- Footer -->
-						<footer id="footer">
-							<div class="copyright">
-								&copy; Designed by Ahsan Ahmed.
-							</div>
-						</footer>
+						<?php include("phpParts/footer.php")?>
 				</section>
 		</div>
 
