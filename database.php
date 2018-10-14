@@ -2,9 +2,9 @@
 <?php
     
 $host='localhost';
-$username='root';
-$user_pass='rqkhbu6t';
-$database_in_use='rinder';
+$username='anomozco_nooruser';
+$user_pass='rWg#M$vFYk]+';
+$database_in_use='anomozco_noor';
 
 $con = mysqli_connect($host,$username,$user_pass,$database_in_use);
 if (!$con)

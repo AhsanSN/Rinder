@@ -36,7 +36,7 @@ if (isset($_POST['username'])) {
                 $session_email      = $_SESSION['email'];
                 $session_category      = $_SESSION['category'];
                 
-                ?><script> window.location = "signup.php"; </script><?
+                ?><script> window.location = "/"; </script><?
             }
 
     }
@@ -178,13 +178,6 @@ if (isset($_POST['username'])) {
 				</section>
 		</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
 
 	</body>
 </html>

@@ -12,11 +12,10 @@ if(isset($_SESSION['username']))
     $session_usernumber = $_SESSION['usernumber'];
     $session_username = $_SESSION['username'];
     $session_email = $_SESSION['email'];
-    $session_ip = $_SESSION['ip'];
-    $session_pic = $_SESSION['pic'];
-    ?><script>document.cookie = 'session_usernumber='+<?echo $session_usernumber?>+ '; path=/';</script><?
+    $session_category = $_SESSION['category'];
+
 //if memebr logged in
-if (isset($_SESSION['usernumber']))
+if (isset($_SESSION['username']))
 {
 }
 if (isset($_SESSION['password']))

@@ -17,24 +17,8 @@ if (isset($_POST["email"])) {
                 $category         = $row['category'];
             }
             $_SESSION['username']    = $username;
-            $_SESSION['usernumber']    = $usernumber;
             $_SESSION['email']       = $email;
             $_SESSION['category']         = $category;
-            
-            if($category =="student"){
-                ?>
-           <script type="text/javascript">
-                window.location = "/newsFeed.php";
-            </script>
-            <?
-            }
-            else{
-                     ?>
-           <script type="text/javascript">
-                window.location = "/myPosts.php";
-            </script>
-            <?
-            }
 ?>
            <script type="text/javascript">
                 window.location = "/";
@@ -56,6 +40,17 @@ if (isset($_POST["email"])) {
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+		    .containerab {
+                position: relative;
+            }
+            .containerab img {
+                float: center;
+                border-radius: 100%;
+                height: 150px;
+                width: 150px;
+            }
+		</style>
 	</head>
 	<body>
 		<div class="page-wrap">
@@ -68,7 +63,7 @@ if (isset($_POST["email"])) {
 
 					<!-- Header -->
 					<header id="header">
-							<div>Rinder Login</div>
+							<div>Settings</div>
 						</header>
 
 					<!-- Gallery -->
@@ -77,19 +72,33 @@ if (isset($_POST["email"])) {
 							<!-- Photo Galleries -->
 								<div class="gallery">
 									<form action="login.php" method="post">
+									    <div class="containerab">
+									        <label for="email">Profile Picture</label>
+                                          <img src="https://anomoz.com/profiles/Anomoz_45630978149993215270807224631953414248.jpg" alt="Avatar" style="width:130px">
+                                          </div>
+                                          <a class="button" href="changePic.php">Change Picture</a>
+                                          <br><br>
 										<div class="field">
 											<label for="email">Email</label>
-											<input name="email" id="email" type="email" placeholder="Email">
+											<input name="email" id="email" type="email" placeholder="Email" value="<?echo $_SESSION['email']?>" readonly>
 										</div>
 										<div class="field">
                                             <label for="message">Password</label>
                                             <input name="password" id="password" type="password" placeholder="Password">
 										</div>
+										<div class="field">
+                                            <label for="message">Re-write Password</label>
+                                            <input name="password" id="password" type="password" placeholder="Password">
+										</div>
+										<div class="field">
+                                            <label for="message">About me</label>
+                                            <textarea name="password" id="password" type="password" placeholder="Password"></textarea>
+										</div>
 										<ul class="actions">
-											<li><input value="Login!" class="button" type="submit"></li>
+											<li><input value="Save Settings." class="button" type="submit"></li>
 										</ul>
 									</form>
-									<p>Don't have an account? <a href="signup.php">Signup now!</a></p>
+								
 								</div>
 						</section>
 						

@@ -17,24 +17,8 @@ if (isset($_POST["email"])) {
                 $category         = $row['category'];
             }
             $_SESSION['username']    = $username;
-            $_SESSION['usernumber']    = $usernumber;
             $_SESSION['email']       = $email;
             $_SESSION['category']         = $category;
-            
-            if($category =="student"){
-                ?>
-           <script type="text/javascript">
-                window.location = "/newsFeed.php";
-            </script>
-            <?
-            }
-            else{
-                     ?>
-           <script type="text/javascript">
-                window.location = "/myPosts.php";
-            </script>
-            <?
-            }
 ?>
            <script type="text/javascript">
                 window.location = "/";
@@ -56,6 +40,7 @@ if (isset($_POST["email"])) {
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+
 	</head>
 	<body>
 		<div class="page-wrap">
@@ -68,7 +53,7 @@ if (isset($_POST["email"])) {
 
 					<!-- Header -->
 					<header id="header">
-							<div>Rinder Login</div>
+							<div>Change Profile Picture</div>
 						</header>
 
 					<!-- Gallery -->
@@ -76,20 +61,19 @@ if (isset($_POST["email"])) {
 
 							<!-- Photo Galleries -->
 								<div class="gallery">
-									<form action="login.php" method="post">
-										<div class="field">
-											<label for="email">Email</label>
-											<input name="email" id="email" type="email" placeholder="Email">
-										</div>
-										<div class="field">
-                                            <label for="message">Password</label>
-                                            <input name="password" id="password" type="password" placeholder="Password">
-										</div>
-										<ul class="actions">
-											<li><input value="Login!" class="button" type="submit"></li>
-										</ul>
-									</form>
-									<p>Don't have an account? <a href="signup.php">Signup now!</a></p>
+								    <form action="changePic.php" method="post" enctype="multipart/form-data">
+    
+                                        <h3>Select image to upload:</h3>
+                                        <input type="file" name="fileToUpload" id="fileToUpload"  class="button">
+                                        
+
+                                    <button type="submit" class="button" value="Upload Image"  name="submit">Upload picture</button>
+                                    </form>
+                                    <br>
+                                    <a href="settings.php" class="button">Go back</a>
+
+								
+								
 								</div>
 						</section>
 						

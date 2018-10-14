@@ -1,0 +1,10 @@
+[28-Aug-2018 08:19:49 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home/anomozco/greybulb.anomoz.com/database.php on line 9
+[28-Aug-2018 08:19:49 UTC] PHP Warning:  mysqli_select_db() expects parameter 1 to be mysqli, boolean given in /home/anomozco/greybulb.anomoz.com/database.php on line 14
+[02-Oct-2018 11:18:20 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/anomozco/greybulb.anomoz.com/sessions.php on line 8
+[02-Oct-2018 11:18:43 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/anomozco/greybulb.anomoz.com/sessions.php on line 8
+[03-Oct-2018 03:28:57 UTC] PHP Warning:  include(/phpParts/navBar.php): failed to open stream: No such file or directory in /home/anomozco/greybulb.anomoz.com/newsFeed.php on line 20
+[03-Oct-2018 03:28:57 UTC] PHP Warning:  include(/phpParts/navBar.php): failed to open stream: No such file or directory in /home/anomozco/greybulb.anomoz.com/newsFeed.php on line 20
+[03-Oct-2018 03:28:57 UTC] PHP Warning:  include(): Failed opening '/phpParts/navBar.php' for inclusion (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/anomozco/greybulb.anomoz.com/newsFeed.php on line 20
+[05-Oct-2018 05:17:26 UTC] PHP Warning:  mysqli_query(): Empty query in /home/anomozco/greybulb.anomoz.com/writePost.php on line 12
+[05-Oct-2018 05:25:32 UTC] PHP Warning:  mysqli_query(): Empty query in /home/anomozco/greybulb.anomoz.com/writePost.php on line 12
+[12-Oct-2018 10:45:49 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/anomozco/greybulb.anomoz.com/myUserProfile.php on line 42

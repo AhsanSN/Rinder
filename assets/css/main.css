@@ -131,7 +131,7 @@
 		@media screen and (max-width: 736px) {
 
 			body, input, select, textarea {
-				font-size: 12pt;
+				font-size: 11pt;
 			}
 
 		}
@@ -139,7 +139,7 @@
 		@media screen and (max-width: 480px) {
 
 			body, input, select, textarea {
-				font-size: 12pt;
+				font-size: 9pt;
 			}
 
 		}
@@ -330,6 +330,7 @@
 		text-align: center;
 		text-decoration: none;
 		white-space: nowrap;
+		margin-bottom: 15px;
 	}
 
 		input[type="submit"].active,
@@ -748,17 +749,16 @@
 	}
 
 	.gallery {
-		padding: 3.5em;
+	    padding: 2em;
 		position: relative;
 		overflow: hidden;
-		min-height: 37em;
 	}
 
 		@media screen and (max-width: 980px) {
 
 			.gallery {
 				padding: 2em;
-				min-height: 20em;
+				min-height: 0em;
 			}
 
 				.gallery header h2 {
@@ -1296,9 +1296,9 @@
 	}
 
 		table tbody tr {
-			border: solid 1px;
 			border-left: 0;
-			border-right: 0;
+    border-right: 0;
+    height: 40px;
 		}
 
 		table td {
